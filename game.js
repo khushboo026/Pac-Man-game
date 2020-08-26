@@ -24,8 +24,16 @@ setupGame(){
     this.ghost.image3 = this.ghost3Img;
 
 }
+//    isPositionSame(){
+//        if(this.player.row===this.ghost.row && this.player.col === this.player.col){
+//            this.player.lives -=1
+//        }
+//        if(this.player.lives < 1) console.log("Game Over")
+
+//     }
 drawGame() {
     background("black")
+   // if(level ===1){
     this.grid.drawballs();
     this.player.drawPlayer();
     this.cherry.drawCherry();
@@ -33,9 +41,24 @@ drawGame() {
     if(frameCount%30===0) {
 
         this.ghost.moveGhost();
-        console.log(" here")
+     //   console.log(" here")
     }
     this.grid.isGameOver();
-    
+   this.player.isPositionSame();
+//}
+// if(level === 2){
+
+// }
+//     this.grid.drawballs();
+//     this.player.drawPlayer();
+//     this.cherry.drawCherry();
+//     this.ghost.drawGhost();
+//     if(frameCount%30===0) {
+
+//         this.ghost.moveGhost();
+//      //   console.log(" here")
+//     }
+//     this.grid.isGameOver();
+//    this.player.isPositionSame();
 }
 }
