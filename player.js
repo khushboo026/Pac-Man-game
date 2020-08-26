@@ -38,7 +38,7 @@ class Player{
             this.score+=1
            document.querySelector('tag').innerText = this.score
              game.grid.grid[this.row][this.col]=1;}
-           //  if(!game.grid.isGameOver()) alert("Level Cleared")
+           //  if(game.grid.isGameOver()) alert("Level Cleared")
 
         }
         moveLeft(){

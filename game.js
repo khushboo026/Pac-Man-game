@@ -30,19 +30,12 @@ drawGame() {
     this.player.drawPlayer();
     this.cherry.drawCherry();
     this.ghost.drawGhost();
-    this.ghost.moveGhost();
+    if(frameCount%30===0) {
 
-
-   
-    // let scoreCard = document.createElement("h2")
-    // scoreCard.innerText = score;
-    // let parent = document.getElementsByTagName("body");
-    // parent.appendChild(scoreCard);
-    // this.obstacles = this.cherry((obstacle)=>{
-    //     if(this.cherry.image.collision(this.player)){
-    //         console.log("cherry");
-    //     }
-    // })
+        this.ghost.moveGhost();
+        console.log(" here")
+    }
+    this.grid.isGameOver();
     
 }
 }

@@ -38,17 +38,20 @@ drawballs(){
     }
 }
 isGameOver(){
+    let includeZero = 0;
+    //let aa = grid.forEach(i)
     for(let i =0;i<15;i++){
         for(let j=0;j<21;j++){
-        if(grid[i][j]!=0){
-            console.log("hi")
-            return true
-        }
-            else {
-                return false
-            }
+        if(this.grid[i][j]==0){
+            includeZero++;
+         //   alert("Level Finished")
+          //  return true
         }
     }
 }
-}
 
+        if(includeZero===0) {
+            alert("Level Completed")
+        }
+}
+}
