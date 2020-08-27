@@ -5,6 +5,10 @@ class Start{
         this.y = 50;
     };
     drawPlayer(){
-        image(this.image,this.x,this.y,800,800)
+      //  this.image.imageMode(CENTER)
+      push()
+      imageMode(CENTER)
+        image(this.image,width/2,height/2, 1400, canvasHeight)
+        pop()
 }
 }

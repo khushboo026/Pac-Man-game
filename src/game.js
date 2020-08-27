@@ -17,7 +17,7 @@ preloadGame() {
 
 }
 setupGame(){
-        this.sound.loop();
+    this.sound.loop();
 
    
      this.player = new Player();
@@ -33,6 +33,7 @@ setupGame(){
     this.ghost3.image = this.ghost3Img;
     this.start = new Start();
     this.start.image = this.startImg;
+   // this.start.image.imageMode(CENTER);
 
 }
 
@@ -40,9 +41,14 @@ drawGame() {
    // this.sound.play();
    
     if(this.gameStatus == "start") {
- this.start.drawPlayer();
-   text("press Enter to start")
-   fill("black")
+        clear()
+        
+        this.start.drawPlayer();
+        
+        text("press Enter to start", width/2, height-200)
+        textSize(100);
+        textAlign(CENTER);
+        fill("black")
         // show start page text()
     } else if (this.gameStatus == "playing") {
     background("black")
@@ -64,6 +70,9 @@ drawGame() {
 
     } else if (this.gameStatus == "game over") {
         // show text("Game Over", x, y) 
+        textSize = 150
+        text("press enter to continue")
+
     }
 }
 }
