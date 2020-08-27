@@ -81,6 +81,10 @@ class Player{
         image(this.image,this.x,this.y,55,55)
         document.querySelector('span').innerText = this.lives
 
+        game.sound.stop()
+        setTimeout(()=>{
+            game.sound.loop()
+        },750)
         }
         if(this.lives<1) {
             game.gameStatus = "game over";

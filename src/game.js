@@ -4,6 +4,7 @@ class Game {
         this.gameStatus = "start"
      
     }
+
 preloadGame() {
     this.playerImgs = loadImage("assets/pacman-boy.png");
     this.dotImg = loadImage("assets/pacman-ball.png");
@@ -11,12 +12,14 @@ preloadGame() {
     this.ghost2Img = loadImage("assets/ghost2.png");
     this.ghost3Img = loadImage("assets/ghost3.png");
     this.startImg = loadImage("assets/start.png");
- //   this.sound = loadSound("pacman_chomp.wav");
+    this.sound = loadSound("Chomp.mp3");
     
 
 }
 setupGame(){
-  //  this.sound.play();
+        this.sound.loop();
+
+   
      this.player = new Player();
     this.player.image = this.playerImgs
   //  this.player.sound = this.sound;
