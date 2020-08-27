@@ -16,7 +16,7 @@ preloadGame() {
 
 }
 setupGame(){
-    this.sound.play();
+  //  this.sound.play();
      this.player = new Player();
     this.player.image = this.playerImgs
   //  this.player.sound = this.sound;
