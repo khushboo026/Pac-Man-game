@@ -22,7 +22,7 @@ class Player{
 
          this.y -=70
          this.row-=1;
-         this.image = loadImage("/assets/pacman-up.png");
+         this.image = loadImage("assets/pacman-up.png");
          if(game.grid.grid[this.row][this.col]===0) 
          {         this.score+=1
             document.querySelector('tag').innerText = this.score
@@ -36,7 +36,7 @@ class Player{
         }
          this.y += 70
          this.row+=1;
-         this.image = loadImage("/assets/pacman-down.png");
+         this.image = loadImage("assets/pacman-down.png");
          if(game.grid.grid[this.row][this.col]===0) {
             this.score+=1
            document.querySelector('tag').innerText = this.score
@@ -49,7 +49,7 @@ class Player{
             }
             this.x -= 70
         this.col-=1;
-        this.image = loadImage("/assets/pacman-left.png");
+        this.image = loadImage("assets/pacman-left.png");
         if(game.grid.grid[this.row][this.col]===0) {
             this.score+=1
            document.querySelector('tag').innerText = this.score
@@ -62,7 +62,7 @@ class Player{
         }
         this.x += 70
          this.col+=1;
-         this.image = loadImage("/assets/pacman-right.jpeg")
+         this.image = loadImage("assets/pacman-right.jpeg")
          if(game.grid.grid[this.row][this.col]===0) {
             this.score+=1
             document.querySelector('tag').innerText = this.score

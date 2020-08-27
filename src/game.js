@@ -5,12 +5,12 @@ class Game {
      
     }
 preloadGame() {
-    this.playerImgs = loadImage("/assets/pacman-boy.png");
-    this.dotImg = loadImage("/assets/pacman-ball.png");
-    this.ghost1Img = loadImage("/assets/ghost1.png");
-    this.ghost2Img = loadImage("/assets/ghost2.png");
-    this.ghost3Img = loadImage("/assets/ghost3.png");
-    this.startImg = loadImage("/assets/start.png");
+    this.playerImgs = loadImage("assets/pacman-boy.png");
+    this.dotImg = loadImage("assets/pacman-ball.png");
+    this.ghost1Img = loadImage("assets/ghost1.png");
+    this.ghost2Img = loadImage("assets/ghost2.png");
+    this.ghost3Img = loadImage("assets/ghost3.png");
+    this.startImg = loadImage("assets/start.png");
  //   this.sound = loadSound("pacman_chomp.wav");
     
 
