@@ -2,14 +2,15 @@ class Player{
     constructor(){
         this.col = 10;
         this.row = 9;
-        //this.grid[row][col]
         this.x = 700;
         this.y = 640;
         this.image
         this.score = 0;
         this.lives = 3;
+        this.sound;
     
     }
+    
     drawPlayer(){
         image(this.image,this.x,this.y,55,55)
         document.querySelector('span').innerText = this.lives
@@ -18,15 +19,14 @@ class Player{
         if(game.grid.grid[this.row-1][this.col]===5 || game.grid.grid[this.row-1][this.col]===6) {
             return
         }
-       // rotate(this.image,90)
-        //this.image = loadImage(this.image)
+
          this.y -=70
          this.row-=1;
+         this.image = loadImage("/assets/pacman-up.png");
          if(game.grid.grid[this.row][this.col]===0) 
          {         this.score+=1
             document.querySelector('tag').innerText = this.score
              game.grid.grid[this.row][this.col]=1;
-           //  if(!game.grid.isGameOver()) alert("Level Cleared")
          }
 
     }
@@ -36,11 +36,11 @@ class Player{
         }
          this.y += 70
          this.row+=1;
+         this.image = loadImage("/assets/pacman-down.png");
          if(game.grid.grid[this.row][this.col]===0) {
             this.score+=1
            document.querySelector('tag').innerText = this.score
              game.grid.grid[this.row][this.col]=1;}
-           //  if(game.grid.isGameOver()) alert("Level Cleared")
 
         }
         moveLeft(){
@@ -49,11 +49,11 @@ class Player{
             }
             this.x -= 70
         this.col-=1;
+        this.image = loadImage("/assets/pacman-left.png");
         if(game.grid.grid[this.row][this.col]===0) {
             this.score+=1
            document.querySelector('tag').innerText = this.score
             game.grid.grid[this.row][this.col]=1;
-          //  if(game.grid.isGameOver()) alert("Level Cleared")
         }
     }
     moveRight(){
@@ -62,17 +62,17 @@ class Player{
         }
         this.x += 70
          this.col+=1;
+         this.image = loadImage("/assets/pacman-right.jpeg")
          if(game.grid.grid[this.row][this.col]===0) {
             this.score+=1
             document.querySelector('tag').innerText = this.score
              game.grid.grid[this.row][this.col]=1;
-           //  if(game.grid.isGameOver()) alert("Level Cleared")
          }
 
     }
 
     isPositionSame(){
-        if(this.row ===game.ghost.row && this.col===game.ghost.col){
+        if((this.row ===game.ghost1.row && this.col===game.ghost1.col)||(this.row ===game.ghost2.row && this.col===game.ghost2.col)||(this.row ===game.ghost3.row && this.col===game.ghost3.col)){
             this.lives -=1;
             this.x = 700;
         this.y = 640;
@@ -82,6 +82,11 @@ class Player{
         document.querySelector('span').innerText = this.lives
 
         }
-        if(this.lives<1) alert("Game Over")
+        if(this.lives<1) {
+            game.gameStatus = "game over";
+          //  game.grid.grid = grid1;
+            alert("Game Over")
+        }
+           
     }
 }

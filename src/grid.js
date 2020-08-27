@@ -1,8 +1,6 @@
-class Grid{
-    constructor(){
-this.grid = [
+const grid1 = [
     [6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6],
-    [6, 1, 0, 0, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5, 0, 0, 1, 6],
+    [6, 0, 0, 0, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5, 0, 0, 0, 6],
     [6, 0, 5, 0, 5, 0, 5, 0, 5, 5, 5, 5, 5, 0, 5 ,0, 5, 0, 5, 0, 6],
     [6, 0, 5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 5, 0, 5, 0, 6],
     [6, 5, 5, 0, 5, 5, 5, 5, 5, 0, 5, 0, 5, 5, 5, 5, 5, 0 ,5, 5, 6],
@@ -14,20 +12,21 @@ this.grid = [
     [6, 5, 5, 0, 5, 5, 5, 5, 5, 0, 5, 0, 5, 5, 5, 5, 5, 0, 5, 5, 6],
     [6, 0, 5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 6],
     [6, 0, 5, 0, 5, 0, 5, 0, 5, 5, 5, 5, 5, 0, 5, 0, 5, 0, 5, 0, 6],
-    [6, 1, 0, 0, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5, 0, 0, 1, 6],
+    [6, 0, 0, 0, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5, 0, 0, 0, 6],
     [6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6]
-],
-//this.x;
-//this.y;
+];
+
+class Grid{
+    constructor(){
+this.grid = JSON.parse(JSON.stringify(grid1));
+
 this.dotImage;
     }
 
 drawballs(){
-    // console.log(this.grid[9][8])
     for(let i = 0;i<15;i++){
         for(let j = 0;j<21;j++){
             if(this.grid[i][j]===0){
-             //  image(this.dotImage, j*90, i*90, 16, 16)
             image(this.dotImage, j*69+42, i*69+42, 16, 16)
         }
         if(this.grid[i][j]===5 || this.grid[i][j]===6){
@@ -39,19 +38,18 @@ drawballs(){
 }
 isGameOver(){
     let includeZero = 0;
-    //let aa = grid.forEach(i)
     for(let i =0;i<15;i++){
         for(let j=0;j<21;j++){
         if(this.grid[i][j]==0){
             includeZero++;
-         //   alert("Level Finished")
-          //  return true
         }
     }
 }
 
-        if(includeZero===0) {
-            alert("Level Completed")
-        }
+if(includeZero===0) {
+    alert("Level Completed")
+      game.gameStatus = "game over";
+
+    }
 }
 }

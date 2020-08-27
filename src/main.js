@@ -1,6 +1,5 @@
 const canvasWidth = 1470;
 const canvasHeight = 1050;
-//let score = 0;
 const squareSize = canvasWidth / 15;
 const game = new Game();
 
@@ -10,6 +9,8 @@ function preload() {
 
 function setup() {
     let canvas = createCanvas(canvasWidth, canvasHeight);
+   // let ele = createAudio("pacman_chomp.wav");
+   // ele.loop();
     game.setupGame();
 }
 
@@ -31,9 +32,14 @@ function keyPressed(){
         if(keyCode === 37){
             game.player.moveLeft();
         }
+        if(keyCode === 13 && (game.gameStatus == "game over" || game.gameStatus == "start")){
+          //  console.log(grid1)
+            game.player.lives = 3
+            game.grid.grid = JSON.parse(JSON.stringify(grid1));
+            game.player.x = 700;
+            game.player.y = 640;
+            game.player.col = 10;
+            game.player.row = 9;
+            game.gameStatus = "playing";
+        }
 }
-
-// let scoreCard = document.createElement("h2")
-// scoreCard.innerText = game.player.score
-//let parent = document.getElementsByTagName("div");
-// document.body.appendChild(scoreCard);
