@@ -11,7 +11,7 @@ preloadGame() {
     this.ghost2Img = loadImage("/assets/ghost2.png");
     this.ghost3Img = loadImage("/assets/ghost3.png");
     this.startImg = loadImage("/assets/start.png");
-    this.sound = loadSound("pacman_chomp.wav");
+ //   this.sound = loadSound("pacman_chomp.wav");
     
 
 }
