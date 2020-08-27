@@ -38,6 +38,7 @@ setupGame(){
 
 drawGame() {
    // this.sound.play();
+   
     if(this.gameStatus == "start") {
  this.start.drawPlayer();
    text("press Enter to start")
