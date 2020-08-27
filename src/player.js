@@ -7,7 +7,7 @@ class Player{
         this.image
         this.score = 0;
         this.lives = 3;
-        this.sound;
+     //   this.sound;
     
     }
     

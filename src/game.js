@@ -12,12 +12,14 @@ preloadGame() {
     this.ghost3Img = loadImage("/assets/ghost3.png");
     this.startImg = loadImage("/assets/start.png");
     this.sound = loadSound("pacman_chomp.wav");
+    
 
 }
 setupGame(){
+    this.sound.play();
      this.player = new Player();
     this.player.image = this.playerImgs
-    this.player.sound = this.sound;
+  //  this.player.sound = this.sound;
     this.grid = new Grid();
     this.grid.dotImage = this.dotImg
     this.ghost1 = new Ghosts( 650,500,7,10);

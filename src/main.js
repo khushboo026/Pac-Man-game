@@ -4,13 +4,12 @@ const squareSize = canvasWidth / 15;
 const game = new Game();
 
 function preload() {
+    
     game.preloadGame();
 }
 
 function setup() {
     let canvas = createCanvas(canvasWidth, canvasHeight);
-   // let ele = createAudio("pacman_chomp.wav");
-   // ele.loop();
     game.setupGame();
 }
 
