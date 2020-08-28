@@ -40,6 +40,6 @@ function keyPressed(){
             game.player.y = 640;
             game.player.col = 10;
             game.player.row = 9;
-            game.gameStatus = "playing";
+            game.gameStatus = "playing";document.querySelector('tag').innerText = 0
         }
 }
