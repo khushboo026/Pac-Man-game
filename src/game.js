@@ -70,10 +70,10 @@ drawGame() {
 
     } else if (this.gameStatus == "game over") {
         // show text("Game Over", x, y) 
-        // text("press Enter to play again", width/2, height/2)
-        // textSize(100);
-        // textAlign(CENTER);
-        // fill('black')
+        text("press Enter to play again", width/2, height/2)
+        textSize(100);
+        textAlign(CENTER);
+        fill('black')
 
     }
 }
