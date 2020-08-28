@@ -34,6 +34,7 @@ function keyPressed(){
         if(keyCode === 13 && (game.gameStatus == "game over" || game.gameStatus == "start")){
           //  console.log(grid1)
             game.player.lives = 3
+            game.player.score = 0;
             game.grid.grid = JSON.parse(JSON.stringify(grid1));
             game.player.x = 700;
             game.player.y = 640;
