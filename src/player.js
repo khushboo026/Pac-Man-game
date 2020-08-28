@@ -88,7 +88,8 @@ class Player{
         }
         if(this.lives<1) {
             game.gameStatus = "game over";
-          //  game.grid.grid = grid1;
+            text("Press Enter to start again",width/2, height-200)
+            fill ("black")
             alert("Game Over")
         }
            

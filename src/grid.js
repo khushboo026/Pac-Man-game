@@ -48,6 +48,8 @@ isGameOver(){
 
 if(includeZero===0) {
     alert("Level Completed")
+    text("Press Enter to start again",width/2, height-200)
+    fill ("black")
       game.gameStatus = "game over";
 
     }

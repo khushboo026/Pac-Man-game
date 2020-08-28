@@ -42,7 +42,7 @@ drawGame() {
    
     if(this.gameStatus == "start") {
         clear()
-        
+
         this.start.drawPlayer();
         
         text("press Enter to start", width/2, height-200)
@@ -70,8 +70,10 @@ drawGame() {
 
     } else if (this.gameStatus == "game over") {
         // show text("Game Over", x, y) 
-        textSize = 150
-        text("press enter to continue")
+        text("press Enter to play again", width/2, height/2)
+        textSize(100);
+        textAlign(CENTER);
+        fill('black')
 
     }
 }
